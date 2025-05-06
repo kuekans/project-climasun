@@ -113,6 +113,7 @@
       box-shadow: 0 0 40px #fdc009;
       flex-shrink: 0;
       transition: transform 3s;
+      flex-direction: column;
     }
 
     .sun:hover {
@@ -123,6 +124,7 @@
     .eyes {
       display: flex;
       gap: 8px;
+      margin-bottom: 5px;
     }
 
     .eye {
@@ -141,6 +143,15 @@
       height: 6px;
       background: black;
       border-radius: 50%;
+    }
+
+    .smile {
+      width: 10px;
+      height: px;
+      border: 2px solid rgb(56, 1, 1);
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+      margin-top: -px;
     }
 
     footer {
@@ -178,10 +189,11 @@
           <div class="eye" id="leftEye"><div class="pupil" id="pupil1"></div></div>
           <div class="eye" id="rightEye"><div class="pupil" id="pupil2"></div></div>
         </div>
+        <div class="smile"></div>
       </div>
       <h1>O que está acontecendo?</h1>
     </div>
-    <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise global.</p>
+    <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise climática global.</p>
     <p>Essas mudanças afetam a agricultura, a biodiversidade, a saúde humana e a economia. E elas são causadas, em grande parte, pelas atividades humanas.</p>
 
     <button onclick="showCausaEfeito()">Entenda Causas e Efeitos</button>
@@ -214,7 +226,7 @@
   </div>
 
   <footer>
-    <p>🌱 Desenvolvido por  Kauê Rosa, João Pedro Coitinho, João Vitor e Gabriel Vinicius - Juntos pelo futuro do planeta 🌎</p>
+    <p>🌱 Desenvolvido por Kauê Rosa, João Pedro Coitinho, João Vitor e Gabriel Vinicius - Juntos pelo futuro do planeta 🌎</p>
   </footer>
 
   <script>
