@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mudanças Climáticas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #e0f7fa;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #67b1ee, #4fc3f7);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header h3 {
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .content h1 {
+      font-size: 2.2rem;
+      color: #0288d1;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #039be5;
+      transform: scale(1.05);
+    }
+
+    .causa-efeito {
+      display: none;
+      background: #ffffff;
+      border-left: 5px solid #81c784;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .eco-icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+
+    .eco-icons div {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .eco-icons img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    .eco-icons div:hover {
+      transform: scale(1.1);
+    }
+
+    .sun {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, #ffd55c, #f9a602);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 40px #ffc107;
+    }
+
+    .sun:hover{
+        transform: scale(1.2);
+        transition: 1s;
+    }
+
+
+    .eyes {
+      display: flex;
+      gap: 8px;
+    }
+
+    .eye {
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .pupil {
+      width: 6px;
+      height: 6px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    footer {
+      background: #263238;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .eco-icons {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="sun">
+    <div class="eyes">
+      <div class="eye" id="leftEye"><div class="pupil" id="pupil1"></div></div>
+      <div class="eye" id="rightEye"><div class="pupil" id="pupil2"></div></div>
+    </div>
+  </div>
+
+  <header>
+    <h1>Mudanças Climáticas</h1>
+    <h3>Um problema que afeta o presente e o futuro</h3>
+  </header>
+
+  <div class="content">
+   <center>
+<font face="verdana">
+    <h1>O que está acontecendo?</h1>
+  </font>
+  </center>
+    <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise global.</p>
+    <p>Essas mudanças afetam a agricultura, a biodiversidade, a saúde humana e a economia. E elas são causadas, em grande parte, pelas atividades humanas.</p>
+
+    <button onclick="showCausaEfeito()">Entenda Causas e Efeitos</button>
+
+    <div class="causa-efeito" id="causaEfeito">
+      <h2>Causas</h2>
+      <p>- Emissão de gases de efeito estufa (como CO₂ e CH₄)</p>
+      <p>- Desmatamento e uso excessivo de recursos naturais</p>
+      <p>- Queima de combustíveis fósseis</p>
+      <h2>Efeitos</h2>
+      <p>- Aquecimento global e aumento do nível do mar</p>
+      <p>- Extinção de espécies e colapso de ecossistemas</p>
+      <p>- Crises hídricas, alimentares e migratórias</p>
+    </div>
+
+    <div class="eco-icons">
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/earth-planet.png" alt="Planeta Terra"/>
+        <p>Preservar o planeta</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/wind-turbine.png" alt="Energia limpa"/>
+        <p>Usar energia limpa</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/forest.png" alt="Plantar árvores"/>
+        <p>Reflorestar</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>🌱 Desenvolvido por [Seu Nome] - Juntos pelo futuro do planeta 🌎</p>
+  </footer>
+
+  <script>
+    const pupil1 = document.getElementById('pupil1');
+    const pupil2 = document.getElementById('pupil2');
+
+    document.addEventListener('mousemove', (e) => {
+      [pupil1, pupil2].forEach(pupil => {
+        const rect = pupil.getBoundingClientRect();
+        const eyeCenterX = rect.left + rect.width / 2;
+        const eyeCenterY = rect.top + rect.height / 2;
+        const dx = e.clientX - eyeCenterX;
+        const dy = e.clientY - eyeCenterY;
+        const angle = Math.atan2(dy, dx);
+        const radius = 4;
+        const offsetX = Math.cos(angle) * radius;
+        const offsetY = Math.sin(angle) * radius;
+        pupil.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      });
+    });
+
+    function showCausaEfeito() {
+      document.getElementById('causaEfeito').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
