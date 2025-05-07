@@ -26,6 +26,91 @@
       padding: 40px 20px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .raindrop {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: fall linear infinite;
+      width: 2px;
+      height: 10px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .sun {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, #ffd55c, #f9a602);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 40px #fdc009;
+      flex-shrink: 0;
+      transition: transform 3s;
+      flex-direction: column;
+    }
+
+    .sun:hover {
+      transform: scale(1.1);
+      transition: 1s;
+    }
+
+    .eyes {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .eye {
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .pupil {
+      width: 6px;
+      height: 6px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    .smile {
+      width: 10px;
+      height: px;
+      border: 2px solid rgb(56, 1, 1);
+      border-top: none;
+      border-radius: 0 0 20px 20px;
     }
 
     header h1 {
@@ -101,59 +186,6 @@
       transform: scale(1.1);
     }
 
-    .sun {
-      position: relative;
-      width: 80px;
-      height: 80px;
-      background: radial-gradient(circle, #ffd55c, #f9a602);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 40px #fdc009;
-      flex-shrink: 0;
-      transition: transform 3s;
-      flex-direction: column;
-    }
-
-    .sun:hover {
-      transform: scale(1.1);
-      transition: 1s;
-    }
-
-    .eyes {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 5px;
-    }
-
-    .eye {
-      width: 18px;
-      height: 18px;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .pupil {
-      width: 6px;
-      height: 6px;
-      background: black;
-      border-radius: 50%;
-    }
-
-    .smile {
-      width: 10px;
-      height: px;
-      border: 2px solid rgb(56, 1, 1);
-      border-top: none;
-      border-radius: 0 0 20px 20px;
-      margin-top: -px;
-    }
-
     footer {
       background: #263238;
       color: #ccc;
@@ -180,6 +212,7 @@
   <header>
     <h1>Mudanças Climáticas</h1>
     <h3>Um problema que afeta o presente e o futuro</h3>
+    <div class="rain"></div>
   </header>
 
   <div class="content">
@@ -251,6 +284,21 @@
     function showCausaEfeito() {
       document.getElementById('causaEfeito').style.display = 'block';
     }
+
+    const rainContainer = document.querySelector('.rain');
+    const createRainDrop = () => {
+      const drop = document.createElement('div');
+      drop.classList.add('raindrop');
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.style.animationDuration = Math.random() * 2 + 2 + 's';
+      rainContainer.appendChild(drop);
+
+      setTimeout(() => {
+        drop.remove();
+      }, 4000);
+    };
+
+    setInterval(createRainDrop, 100);
   </script>
 </body>
 </html>
