@@ -141,6 +141,7 @@
 
     .eco-icons div {
       text-align: center;
+      transition: 1s;
     }
 
     .eco-icons img {
@@ -165,11 +166,13 @@
       box-shadow: 0 0 40px #ffc107;
       flex-shrink: 0;
       transition: transform 0.3s;
-      z-index: 2; /* Ensure the sun appears above the rain */
+      transition: 3s;
+      z-index: 2; /* deixa o sol a frente da chuva */
     }
 
     .sun:hover {
-      transform: scale(1.1) rotate(10deg);
+      transform: scale(1.3);
+      transition: 1s;
     }
 
     .mouth {
@@ -280,8 +283,8 @@
     <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise global.</p>
     <p>Essas mudanças afetam a agricultura, a biodiversidade, a saúde humana e a economia. E elas são causadas, em grande parte, pelas atividades humanas.</p>
     
-    <button onclick="showCausaEfeito()">Entenda Causas e Efeitos</button>
-
+    <button onclick="showCausaEfeito(); fecharCausaEfeito();">Entenda Causas e Efeitos 🗑️</button>
+ 
     <div class="causa-efeito" id="causaEfeito">
       <h2>Causas</h2>
     
@@ -319,6 +322,7 @@
     <li><b>Restaurar a natureza</b> para que ela ajude a equilibrar o clima.</li>
 
 <br><br>
+
 <div id="sabia">
     <center>
     <h2>Você sabia?</h2>
@@ -344,7 +348,7 @@
   </div>
 
   <footer>
-    <p>🌱 Desenvolvido por João Pedro C., Kaue Rosa, Gabriel V., joão V. - Juntos pelo futuro do planeta 🌎</p>
+    <p>🌱 Desenvolvido por João Pedro C., Kauê Rosa, Gabriel V., joão V. - Juntos pelo futuro do planeta 🌎</p>
   </footer>
 
   <script>
@@ -367,8 +371,13 @@
     });
 
     function showCausaEfeito() {
-      document.getElementById('causaEfeito').style.display = 'block';
+    const causaEfeito = document.getElementById('causaEfeito');
+    if (causaEfeito.style.display === 'block') {
+    causaEfeito.style.display = 'none';
+    } else {
+     causaEfeito.style.display = 'block';
     }
+}
   </script>
 </body>
 </html>
